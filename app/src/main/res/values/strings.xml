@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">DadJokes_intermediate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="proceed">Proceed</string>
+    <string name="already_member">Already a member? Sign In</string>
+    <string name="error_missing_field">All fields are required</string>
+    <string name="invalid_mail">Invalid email</string>
+    <string name="invalid_password">Password should be atleast 6 characters</string>
+    <string name="confirm_password_error">Password do not match</string>
 </resources>
