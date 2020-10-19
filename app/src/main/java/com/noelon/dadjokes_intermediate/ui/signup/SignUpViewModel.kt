@@ -1,14 +1,12 @@
-package com.noelon.dadjokes_intermediate.ui.viewmodels
+package com.noelon.dadjokes_intermediate.ui.signup
 
 import android.util.Patterns
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.noelon.dadjokes_intermediate.R
 import com.noelon.dadjokes_intermediate.models.ResultWrapper
 import com.noelon.dadjokes_intermediate.models.User
-import com.noelon.dadjokes_intermediate.repository.AuthRepository
 import com.noelon.dadjokes_intermediate.repository.authRepository
 
 class SignUpViewModel : ViewModel() {

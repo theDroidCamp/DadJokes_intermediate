@@ -6,13 +6,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.noelon.dadjokes_intermediate.ui.viewmodels.SignUpViewModel" />
+            type="com.noelon.dadjokes_intermediate.ui.signup.SignUpViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.auth.SignUpFragment">
+        tools:context=".ui.signup.SignUpFragment">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
-                tools:context=".ui.auth.SignUpFragment">
+                tools:context=".ui.signup.SignUpFragment">
 
                 <TextView
                     android:id="@+id/textView"

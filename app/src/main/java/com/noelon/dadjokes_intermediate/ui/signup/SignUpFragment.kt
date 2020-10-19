@@ -1,6 +1,5 @@
-package com.noelon.dadjokes_intermediate.ui.auth
+package com.noelon.dadjokes_intermediate.ui.signup
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,10 +9,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.google.android.material.snackbar.Snackbar
-import com.noelon.dadjokes_intermediate.R
 import com.noelon.dadjokes_intermediate.databinding.FragmentSignUpBinding
 import com.noelon.dadjokes_intermediate.models.ResultWrapper
-import com.noelon.dadjokes_intermediate.ui.viewmodels.SignUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
