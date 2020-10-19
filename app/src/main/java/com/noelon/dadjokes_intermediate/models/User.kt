@@ -1,8 +1,9 @@
 package com.noelon.dadjokes_intermediate.models
 
 data class User(
-    val firstName: String,
-    val lastName: String,
-    val email: String,
-    val password: String
+    var firstName: String = "",
+    var lastName: String = "",
+    var email: String = "",
+    var password: String = "",
+    var confirmPassword: String = ""
 )
