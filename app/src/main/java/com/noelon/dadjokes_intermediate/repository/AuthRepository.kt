@@ -49,4 +49,17 @@ class AuthRepository(private val auth: FirebaseAuth) {
                 Log.d(TAG, e.toString())
             }
     }
+    fun signIn(user: User, response: MutableLiveData<ResultWrapper<User>>){
+        auth.signInWithEmailAndPassword(user.email, user.password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful){
+                    response.postValue(ResultWrapper.Success(user))
+                }
+                else
+                {
+                    response.postValue(ResultWrapper
+                        .GenericError(null, task.exception.toString()))
+                }
+            }
+    }
 }

@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="signInViewModel"
+            type="com.noelon.dadjokes_intermediate.ui.signin.SignInViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,7 +33,7 @@
             android:hint="@string/email"
             android:autofillHints="false"
             android:layout_marginTop="40dp"
-
+            android:text="@={signInViewModel.user.email}"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +47,7 @@
             android:ems="10"
             android:layout_marginTop="16dp"
             android:hint="@string/password"
-
+            android:text="@={signInViewModel.user.password}"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,17 +57,18 @@
             android:id="@+id/buttonSignIn"
             style="@style/CustomButton"
             android:text="@string/proceed"
-
+            android:onClick="@{() -> signInViewModel.signIn()}"
             app:layout_constraintEnd_toEndOf="@id/editTextTextPassword"
             app:layout_constraintStart_toStartOf="@id/editTextTextPassword"
             app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
 
         <TextView
-            android:id="@+id/navToSignIn"
+            android:id="@+id/navToSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
+            android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@id/buttonSignIn"
             app:layout_constraintStart_toStartOf="@id/buttonSignIn"
             app:layout_constraintEnd_toEndOf="@id/buttonSignIn"
