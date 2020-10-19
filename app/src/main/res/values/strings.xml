@@ -10,4 +10,8 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="proceed">Proceed</string>
     <string name="already_member">Already a member? Sign In</string>
+    <string name="error_missing_field">All fields are required</string>
+    <string name="invalid_mail">Invalid email</string>
+    <string name="invalid_password">Password should be atleast 6 characters</string>
+    <string name="confirm_password_error">Password do not match</string>
 </resources>
