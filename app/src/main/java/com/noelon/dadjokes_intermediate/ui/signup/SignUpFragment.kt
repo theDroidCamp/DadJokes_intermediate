@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import com.noelon.dadjokes_intermediate.R
 import com.noelon.dadjokes_intermediate.databinding.FragmentSignUpBinding
 import com.noelon.dadjokes_intermediate.models.ResultWrapper
+import com.noelon.dadjokes_intermediate.ui.signin.SignInFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,9 +41,16 @@ class SignUpFragment : Fragment() {
             if (it is ResultWrapper.Success) {
                 //ToDo: Go to login or main view
                 Toast.makeText(context, "Account created", Toast.LENGTH_LONG).show()
+                val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
+                findNavController().navigate(action)
             } else {
                 Snackbar.make(view, it.toString(), Snackbar.LENGTH_SHORT).show()
             }
         })
+        binding.navToSignIn.setOnClickListener {
+            val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
+            findNavController().navigate(action)
+            activity?.finish()
+        }
     }
 }
