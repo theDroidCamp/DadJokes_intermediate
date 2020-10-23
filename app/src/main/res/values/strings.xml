@@ -16,4 +16,7 @@
     <string name="confirm_password_error">Password do not match</string>
     <string name="sign_in">Sign In</string>
     <string name="new_user_sign_up">New User? Sign Up</string>
+    <string name="laugh_out_laugh_loud">Laugh out, laugh loud...</string>
+    <string name="welcome_dadjokes">Welcome DadJokes</string>
+    <string name="get_started">GET STARTED</string>
 </resources>
