@@ -6,4 +6,9 @@
 
     <color name="dark_gray">#DEDEDE</color>
     <color name="gray">#FBFBFB</color>
+
+    <color name="dark_black">#272525</color>
+    <color name="light_black">#525252</color>
+
+    <color name="line_grey">#DAD3D3</color>
 </resources>

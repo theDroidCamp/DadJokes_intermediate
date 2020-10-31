@@ -39,10 +39,9 @@ class SignUpFragment : Fragment() {
 
         signUpViewModel.signUpResponse.observe(viewLifecycleOwner, {
             if (it is ResultWrapper.Success) {
-                //ToDo: Go to login or main view
                 Toast.makeText(context, "Account created", Toast.LENGTH_LONG).show()
-                val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
-                findNavController().navigate(action)
+//                val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
+                findNavController().navigate(R.id.action_signUpFragment_to_jokesFragment)
             } else {
                 Snackbar.make(view, it.toString(), Snackbar.LENGTH_SHORT).show()
             }
