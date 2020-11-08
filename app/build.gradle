@@ -60,7 +60,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
     //Lottie
-    implementation 'com.airbnb.android:lottie:3.0.3-support'
+    implementation 'com.airbnb.android:lottie:3.4.0'
 
     //anim
     implementation 'com.github.hajiyevelnur92:intentanimation:1.0'
