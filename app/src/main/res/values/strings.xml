@@ -19,4 +19,9 @@
     <string name="title_favorite">Favourites</string>
     <string name="title_home">Home</string>
     <string name="title_about">About</string>
+
+    <string name="laugh_out_laugh_loud">Laugh out, laugh loud...</string>
+    <string name="welcome_dadjokes">Welcome DadJokes</string>
+    <string name="get_started">GET STARTED</string>
+
 </resources>
