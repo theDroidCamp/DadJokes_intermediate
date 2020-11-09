@@ -16,14 +16,13 @@ import timber.log.Timber
 import java.net.UnknownHostException
 
 class JokesViewModel(context: Context) : ViewModel() {
-    private val uiScope = CoroutineScope(Dispatchers.Main)
     private val jokeDataBase: JokeDataBase? by lazy {
         JokeDataBase.getInstance(context)
     }
 
     // Using a Map instead of an ArrayList to avoid having the same joke twice by checking the id.
-    private var _mapOfJokes = MutableLiveData(LinkedHashMap<Int?, Joke>())
-    val mapOfJokes: LiveData<LinkedHashMap<Int?, Joke>>
+    private var _mapOfJokes = MutableLiveData(LinkedHashMap<Int?, Joke?>())
+    val mapOfJokes: LiveData<LinkedHashMap<Int?, Joke?>>
         get() = _mapOfJokes
 
     private var _likedJokes = MutableLiveData(ArrayList<Joke?>())
@@ -38,32 +37,24 @@ class JokesViewModel(context: Context) : ViewModel() {
 
     private fun getLikedJokes() {
         CoroutineScope(Dispatchers.IO).launch {
-            val localLikedJokes = ArrayList<Joke?>()
-            jokeDataBase?.jokeDao?.getAllLocalJokesDatabaseClass()?.toMutableList()
-                ?.filter { it.isLiked }
-                ?.forEach {
-                    localLikedJokes.add(it.joke)
-                }
+
+            val localLikedJokes = jokeDataBase?.jokeDao?.getAllLocalJokesDatabaseClass()?.toMutableList()
+                ?.filter { it.isLiked }?.map{ it.joke }
 
             withContext(Dispatchers.Main) {
                 Timber.d("Liked jokes: $localLikedJokes")
-                _likedJokes.value = localLikedJokes
+                _likedJokes.value = ArrayList(localLikedJokes ?: mutableListOf())
             }
         }
     }
 
     fun getTenJokes() {
-        uiScope.launch {
-            val innerHashMap = LinkedHashMap<Int?, Joke>()
-
-            getTenJokesAsync()?.forEach {
-                innerHashMap[it.id] = it
-            }
-            _mapOfJokes.value = innerHashMap
+        CoroutineScope(Dispatchers.Main).launch {
+            _mapOfJokes.value = getTenJokesAsync()?.associateBy { it?.id } as LinkedHashMap<Int?, Joke?>?
         }
     }
 
-    private suspend fun getTenJokesAsync(): List<Joke>? {
+    private suspend fun getTenJokesAsync(): List<Joke?>? {
         return withContext(Dispatchers.Default) {
             try {
                 val remoteListOfJoke =
@@ -83,13 +74,7 @@ class JokesViewModel(context: Context) : ViewModel() {
     }
 
 
-    private suspend fun getLocalJokes(): List<Joke>? {
-        return withContext(Dispatchers.IO) {
-            val listOfJoke = ArrayList<Joke>()
-            jokeDataBase?.jokeDao?.getAllLocalJokesDatabaseClass()?.forEach {
-                it.joke?.let { joke -> listOfJoke.add(joke) }
-            }
-            listOfJoke.toList()
-        }
+    private suspend fun getLocalJokes(): List<Joke?>? {
+        return withContext(Dispatchers.IO) { jokeDataBase?.jokeDao?.getAllLocalJokesDatabaseClass()?.map { it.joke } }
     }
 }
