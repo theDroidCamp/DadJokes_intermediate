@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "97509253321",
+    "firebase_url": "https://dadjokes-449c8.firebaseio.com",
+    "project_id": "dadjokes-449c8",
+    "storage_bucket": "dadjokes-449c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97509253321:android:af78cdebbd5e607d60ed18",
+        "android_client_info": {
+          "package_name": "com.abhijith.assignment.newsbuzz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97509253321-5ep57u7miv3edc9k6mpm2qmgm3rpvqjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDACi4udL42CHfM_02pjkRs1OqsDuLCXgI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97509253321-5ep57u7miv3edc9k6mpm2qmgm3rpvqjo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
