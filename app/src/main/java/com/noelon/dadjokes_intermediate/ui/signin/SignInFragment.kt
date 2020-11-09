@@ -38,8 +38,9 @@ class SignInFragment : Fragment() {
 
         signInViewModel.signInResponse.observe(viewLifecycleOwner, {
             if (it is ResultWrapper.Success) {
-                val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
-                findNavController().navigate(action)
+//                val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+//                findNavController().navigate(action)
+                findNavController().navigate(R.id.action_signInFragment_to_jokesFragment)
             } else {
                 Snackbar.make(view, it.toString(), Snackbar.LENGTH_SHORT).show()
             }
@@ -54,8 +55,8 @@ class SignInFragment : Fragment() {
             .replace(R.id.nav_host_fragment, registerFragment)
             .addToBackStack(null)
             .commit()*/
-        val action = SignInFragmentDirections.actionSignInFragmentToSignUpFragment()
-        findNavController().navigate(action)
+//        val action = SignInFragmentDirections.actionSignInFragmentToSignUpFragment()
+        findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToSignUpFragment())
     }
 
 }
